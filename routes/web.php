@@ -66,13 +66,6 @@ Route::get('list-transactions-by-id', [TransactionController::class, 'index'])->
 Route::get('approve-transactions/{id}', [TransactionController::class, 'approveTransaction'])->name('approve-transactions');
 Route::get('cancel-transactions/{id}', [TransactionController::class, 'cancelTransaction'])->name('cancel-transactions');
 
-Route::get('post', [PostController::class, 'index'])->name('post');
-Route::get('create-post', [PostController::class, 'create'])->name('create-post');
-Route::post('create-post', [PostController::class, 'store'])->name('save-post');
-Route::get('edit-post/{id}', [PostController::class, 'edit'])->name('edit-post');
-Route::post('edit-post/{id}', [PostController::class, 'update'])->name('edit-post');
-Route::get('delete-post/{id}', [PostController::class, 'delete'])->name('delete-post');
-
 Route::get('jadwal-belajar', [JadwalBelajarController::class, 'index'])->name('jadwal-belajar');
 Route::get('create-jadwal-belajar', [JadwalBelajarController::class, 'create'])->name('create-jadwal-belajar');
 Route::post('create-jadwal-belajar', [JadwalBelajarController::class, 'store'])->name('save-jadwal-belajar');

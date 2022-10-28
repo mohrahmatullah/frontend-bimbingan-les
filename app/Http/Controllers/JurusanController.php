@@ -58,7 +58,8 @@ class JurusanController extends Controller
         if(Session::get('token')){  
             try{   
                 $response = Http::withToken(Session::get('token'))->post($this->api_host.'/api/jurusan', [
-                    'nama' => $request->input('nama')
+                    'kode_jurusan' => $request->input('kode_jurusan'),
+                    'nama_jurusan' => $request->input('nama_jurusan')
                 ]);     
 
                 $alert_toast = 
@@ -108,8 +109,9 @@ class JurusanController extends Controller
         if(Session::get('token')){  
             try{   
                 $response = Http::withToken(Session::get('token'))->post($this->api_host.'/api/jurusan', [
-                    'id'    =>  $id,
-                    'nama'  =>  $request->input('nama')
+                    'id'            =>  $id,
+                    'kode_jurusan'  => $request->input('kode_jurusan'),
+                    'nama_jurusan'  => $request->input('nama_jurusan')
                 ]);     
                 
                 $alert_toast = 

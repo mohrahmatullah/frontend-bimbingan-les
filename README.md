@@ -40,3 +40,12 @@ akun admin
 username = admin
 password = admin
 ```
+
+
+## Tampilan Dashboard Admin.
+
+![dashboard_admin](dashboard_admin.png)
+
+## Tampilan Dashboard User.
+
+![dashboard_user](dashboard_user.png)

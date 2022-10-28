@@ -5,7 +5,7 @@
   <div class="content-start transition  "> 
     <div class="container-fluid dashboard">
       <div class="content-header">
-        <h1>Create Category</h1>
+        <h1>Create Jadwal Belajar</h1>
       </div>
             
       <div class="row">
@@ -17,7 +17,7 @@
                 <div class="card-body">
                   <div class="mb-3">
                     <label>Title</label>
-                    <input type="text" class="form-control" name="title" required="">
+                    <input type="text" class="form-control" name="waktu" required="">
                   </div>
                 </div>
                 <div class="card-footer text-right">

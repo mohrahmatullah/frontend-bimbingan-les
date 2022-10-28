@@ -48,6 +48,11 @@ class TransactionController extends Controller
                     'id_user'        => Session::get('id'),
                     'params'    => 'biodata_list'
                 ])->json();
+                
+                $transaction = Http::withToken(Session::get('token'))->post($this->api_host.'/api/show', [
+                    'params'    => 'transaction_list'
+                ])->json();
+                
                 $kelas = Http::withToken(Session::get('token'))->get($this->api_host.'/api/kelas')->json();
                 $jurusan = Http::withToken(Session::get('token'))->get($this->api_host.'/api/jurusan')->json();
                 $jadwal_belajar = Http::withToken(Session::get('token'))->get($this->api_host.'/api/jadwal-belajar')->json();
@@ -57,6 +62,7 @@ class TransactionController extends Controller
                 $table['kelas'] = $kelas['data'];
                 $table['jurusan'] = $jurusan['data'];
                 $table['jadwal_belajar'] = $jadwal_belajar['data'];
+                $table['transaction'] = $transaction['data'];
                 
                 return view('transaction.create', $table);
             }
@@ -70,30 +76,6 @@ class TransactionController extends Controller
         
     }
 
-    public function showById(Request $request)
-    {
-        if(Session::get('token')){  
-            try{       
-                
-                $data = Http::withToken(Session::get('token'))->post($this->api_host.'/api/show', [
-                    'id_user'        => Session::get('id'),
-                    'params'    => 'transaction_list'
-                ])->json();
-
-
-                $table = $data['data'];
-                
-                return view('transaction.index-by-id', compact('table'));
-            }
-            catch (\Exception $e) {
-                return redirect()->route('error-404'); 
-            }
-        }
-        else{
-            return redirect()->route('get-auth'); 
-        }
-        
-    }
 
     public function store(Request $request)
     {

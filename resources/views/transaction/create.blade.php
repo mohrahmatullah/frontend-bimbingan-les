@@ -77,6 +77,44 @@
               </form>
             </div>
           </div>
+          @if(count($transaction) > 0)
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body"> 
+              <div class="table-responsive"> 
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Kelas</th>
+                    <th scope="col">Jurusan</th>
+                    <th scope="col">Jadwal</th>
+                    <th scope="col">Les</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Created</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @foreach ($transaction as $row)
+                  <tr>
+                    <th scope="row">{{ $loop->iteration }}</th>
+                    <td>{{ $row['biodata']['nama'] }}</td>
+                    <td>{{ $row['kelas']['nama'] }}</td>
+                    <td>{{ $row['jurusan']['nama_jurusan'] }}</td>
+                    <td>{{ $row['jadwal_belajar']['waktu'] }}</td>
+                    <td>{{ $row['les'] }}</td>
+                    <td>{{ $row['status'] }}</td>
+                    <td>{{ date('d M Y', strtotime($row['created_at'])) }}</td>
+                  </tr>
+                  @endforeach
+                </tbody>
+                </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          @endif
 
       </div>
 

@@ -25,3 +25,18 @@ $ copy .env.example .env
 
 put database credentials in .env file
 ```
+
+
+Aplikasi Terdiri dari 2 role
+
+```
+admin
+user
+```
+
+akun admin
+
+```
+username = admin
+password = admin
+```

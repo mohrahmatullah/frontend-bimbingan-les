@@ -126,7 +126,6 @@ class AuthController extends Controller
                     'url'          => route('redirect-forgot-password', $checkEmail['id'])
                 ]);
 
-                return $data;
                 $alert_toast = 
                 [
                     'title' => 'Operation Successful',

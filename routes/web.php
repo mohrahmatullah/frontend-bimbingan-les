@@ -57,8 +57,14 @@ Route::get('delete-kelas/{id}', [KelasController::class, 'delete'])->name('delet
 
 Route::get('biodata', [BiodataController::class, 'index'])->name('biodata');
 
-Route::get('transactions', [TransactionController::class, 'index'])->name('transactions');
+Route::get('list-transactions', [TransactionController::class, 'index'])->name('list-transactions');
+Route::get('transactions', [TransactionController::class, 'show'])->name('transactions');
 Route::post('transactions', [TransactionController::class, 'store'])->name('save-transactions');
+
+Route::get('list-transactions-by-id', [TransactionController::class, 'index'])->name('list-transactions-by-id');
+
+Route::get('approve-transactions/{id}', [TransactionController::class, 'approveTransaction'])->name('approve-transactions');
+Route::get('cancel-transactions/{id}', [TransactionController::class, 'cancelTransaction'])->name('cancel-transactions');
 
 Route::get('post', [PostController::class, 'index'])->name('post');
 Route::get('create-post', [PostController::class, 'create'])->name('create-post');

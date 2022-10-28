@@ -28,6 +28,13 @@
           <a href="{{ route('biodata') }}"><i class='bx bx-columns icon'></i> Biodata</a>
         </li>
         @endif
+        @if(Session::get('role') == 'admin'){  
+        <!-- Divider-->
+        <li class="divider" data-text="Atrana">Registrasi</li>
+        <li>
+          <a href="{{ route('list-transactions') }}"><i class='bx bx-columns icon'></i> Bimbingan Belajar</a>
+        </li>
+        @endif
         @if(Session::get('role') == 'user'){  
         <!-- Divider-->
         <li class="divider" data-text="Atrana">Registrasi</li>

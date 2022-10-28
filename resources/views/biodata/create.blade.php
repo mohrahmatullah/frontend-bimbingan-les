@@ -5,7 +5,7 @@
   <div class="content-start transition  "> 
     <div class="container-fluid dashboard">
       <div class="content-header">
-        <h1>Create Category</h1>
+        <h1>Create Biodata</h1>
       </div>
             
       <div class="row mb-5">

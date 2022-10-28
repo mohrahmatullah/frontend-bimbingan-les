@@ -5,7 +5,7 @@
   <div class="content-start transition  "> 
     <div class="container-fluid dashboard">
       <div class="content-header">
-        <h1>Create Tag</h1>
+        <h1>Create Jurusan</h1>
       </div>
             
       <div class="row">
@@ -16,8 +16,12 @@
                 @csrf
                 <div class="card-body">
                   <div class="mb-3">
-                    <label>Title</label>
-                    <input type="text" class="form-control" name="title" required="">
+                    <label>Kode Jurusan</label>
+                    <input type="text" class="form-control" name="kode_jurusan" required="">
+                  </div>
+                  <div class="mb-3">
+                    <label>Nama Jurusan</label>
+                    <input type="text" class="form-control" name="nama_jurusan" required="">
                   </div>
                 </div>
                 <div class="card-footer text-right">

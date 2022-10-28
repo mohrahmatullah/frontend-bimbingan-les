@@ -20,13 +20,13 @@
           </div>
       @endif
       
-      <div class="col-md-3">
+      {{--<div class="col-md-3">
         <div class="card">
           <div class="px-4">
               <a href="{{ route('create-biodata') }}" class='btn btn-block btn-xl btn-primary font-bold mt-3'>Create Biodata</a>
             </div>
         </div>
-      </div>
+      </div>--}}
 
       <div class="col-md-12">
         <div class="card">
@@ -54,7 +54,7 @@
                 <td>{{ $row['alamat'] }}</td>
                 <td>{{ date('d M Y', strtotime($row['created_at'])) }}</td>
                 <td>
-                  <a href="{{route('edit-biodata', $row['id_user'])}}" class="btn btn-primary btn-sm">Edit</button>
+                  {{--<a href="{{route('edit-biodata', $row['id_user'])}}" class="btn btn-primary btn-sm">Edit</button>--}}
                   <a href="{{route('delete-biodata', $row['id'])}}" class="btn btn-warning btn-sm">Hapus</button>
                 </td>
               </tr>

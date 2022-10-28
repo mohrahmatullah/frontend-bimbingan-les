@@ -1,5 +1,5 @@
 @extends('includes.default')
-@section('title', 'Blog | Dashboard')
+@section('title', 'LES | Dashboard')
 @section('content')
 <div class="content-start transition">
   <div class="container-fluid dashboard">

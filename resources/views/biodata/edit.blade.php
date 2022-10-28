@@ -1,5 +1,5 @@
 @extends('includes.default')
-@section('title', 'Blog | Dashboard')
+@section('title', 'LES | Dashboard')
 @section('content')
 <!--Content Start-->
   <div class="content-start transition  "> 

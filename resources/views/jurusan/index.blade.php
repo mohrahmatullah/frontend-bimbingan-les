@@ -24,7 +24,7 @@
       <div class="col-md-3">
         <div class="card">
           <div class="px-4">
-              <a href="{{ route('create-tag') }}" class='btn btn-block btn-xl btn-primary font-bold mt-3'>Create Tag</a>
+              <a href="{{ route('create-jurusan') }}" class='btn btn-block btn-xl btn-primary font-bold mt-3'>Create jurusan</a>
             </div>
         </div>
       </div>
@@ -37,7 +37,8 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Title</th>
+                <th scope="col">Kode Jurusan</th>
+                <th scope="col">Nama</th>
                 <th scope="col">Created</th>
                 <th scope="col">Action</th>
               </tr>
@@ -46,11 +47,12 @@
               @foreach ($table as $row)
               <tr>
                 <th scope="row">{{ $table->firstItem() + $loop->index }}</th>
-                <td>{{ $row['title'] }}</td>
+                <td>{{ $row['kode_jurusan'] }}</td>
+                <td>{{ $row['nama_jurusan'] }}</td>
                 <td>{{ date('d M Y', strtotime($row['created_at'])) }}</td>
                 <td>
-                  <a href="{{route('edit-tag', $row['id'])}}" class="btn btn-primary btn-sm">Edit</button>
-                  <a href="{{route('delete-tag', $row['id'])}}" class="btn btn-warning btn-sm">Hapus</button>
+                  <a href="{{route('edit-jurusan', $row['id'])}}" class="btn btn-primary btn-sm">Edit</button>
+                  <a href="{{route('delete-jurusan', $row['id'])}}" class="btn btn-warning btn-sm">Hapus</button>
                 </td>
               </tr>
               @endforeach

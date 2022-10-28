@@ -73,19 +73,19 @@ Route::get('edit-post/{id}', [PostController::class, 'edit'])->name('edit-post')
 Route::post('edit-post/{id}', [PostController::class, 'update'])->name('edit-post');
 Route::get('delete-post/{id}', [PostController::class, 'delete'])->name('delete-post');
 
-Route::get('category', [CategoryController::class, 'index'])->name('category');
-Route::get('create-category', [CategoryController::class, 'create'])->name('create-category');
-Route::post('create-category', [CategoryController::class, 'store'])->name('save-category');
-Route::get('edit-category/{id}', [CategoryController::class, 'edit'])->name('edit-category');
-Route::post('edit-category/{id}', [CategoryController::class, 'update'])->name('edit-category');
-Route::get('delete-category/{id}', [CategoryController::class, 'delete'])->name('delete-category');
+Route::get('jadwal-belajar', [JadwalBelajarController::class, 'index'])->name('jadwal-belajar');
+Route::get('create-jadwal-belajar', [JadwalBelajarController::class, 'create'])->name('create-jadwal-belajar');
+Route::post('create-jadwal-belajar', [JadwalBelajarController::class, 'store'])->name('save-jadwal-belajar');
+Route::get('edit-jadwal-belajar/{id}', [JadwalBelajarController::class, 'edit'])->name('edit-jadwal-belajar');
+Route::post('edit-jadwal-belajar/{id}', [JadwalBelajarController::class, 'update'])->name('edit-jadwal-belajar');
+Route::get('delete-jadwal-belajar/{id}', [JadwalBelajarController::class, 'delete'])->name('delete-jadwal-belajar');
 
-Route::get('tag', [TagController::class, 'index'])->name('tag');
-Route::get('create-tag', [TagController::class, 'create'])->name('create-tag');
-Route::post('create-tag', [TagController::class, 'store'])->name('save-tag');
-Route::get('edit-tag/{id}', [TagController::class, 'edit'])->name('edit-tag');
-Route::post('edit-tag/{id}', [TagController::class, 'update'])->name('edit-tag');
-Route::get('delete-tag/{id}', [TagController::class, 'delete'])->name('delete-tag');
+Route::get('jurusan', [JurusanController::class, 'index'])->name('jurusan');
+Route::get('create-jurusan', [JurusanController::class, 'create'])->name('create-jurusan');
+Route::post('create-jurusan', [JurusanController::class, 'store'])->name('save-jurusan');
+Route::get('edit-jurusan/{id}', [JurusanController::class, 'edit'])->name('edit-jurusan');
+Route::post('edit-jurusan/{id}', [JurusanController::class, 'update'])->name('edit-jurusan');
+Route::get('delete-jurusan/{id}', [JurusanController::class, 'delete'])->name('delete-jurusan');
 
 Route::get('profile', [AuthController::class, 'profile'])->name('profile');
 Route::get('list-user', [TagController::class, 'listUser'])->name('list-user');

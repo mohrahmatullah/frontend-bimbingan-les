@@ -4,7 +4,7 @@
 <div class="content-start transition">
   <div class="container-fluid dashboard">
     <div class="content-header">
-      <h1>Category</h1>
+      <h1>Jadwal Belajar</h1>
       <p></p>
     </div>
     
@@ -23,7 +23,7 @@
       <div class="col-md-3">
         <div class="card">
           <div class="px-4">
-              <a href="{{ route('create-category') }}" class='btn btn-block btn-xl btn-primary font-bold mt-3'>Create Category</a>
+              <a href="{{ route('create-jadwal-belajar') }}" class='btn btn-block btn-xl btn-primary font-bold mt-3'>Create Jadwal Belajar</a>
             </div>
         </div>
       </div>
@@ -45,11 +45,11 @@
               @foreach ($table as $row)
               <tr>
                 <th scope="row">{{ $table->firstItem() + $loop->index }}</th>
-                <td>{{ $row['title'] }}</td>
+                <td>{{ $row['waktu'] }}</td>
                 <td>{{ date('d M Y', strtotime($row['created_at'])) }}</td>
                 <td>
-                  <a href="{{route('edit-category', $row['id'])}}" class="btn btn-primary btn-sm">Edit</button>
-                  <a href="{{route('delete-category', $row['id'])}}" class="btn btn-warning btn-sm">Hapus</button>
+                  <a href="{{route('edit-jadwal-belajar', $row['id'])}}" class="btn btn-primary btn-sm">Edit</button>
+                  <a href="{{route('delete-jadwal-belajar', $row['id'])}}" class="btn btn-warning btn-sm">Hapus</button>
                 </td>
               </tr>
               @endforeach

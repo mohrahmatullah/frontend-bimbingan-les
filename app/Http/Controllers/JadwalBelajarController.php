@@ -58,7 +58,7 @@ class JadwalBelajarController extends Controller
         if(Session::get('token')){  
             try{   
                 $response = Http::withToken(Session::get('token'))->post($this->api_host.'/api/jadwal-belajar', [
-                    'nama' => $request->input('nama')
+                    'waktu' => $request->input('waktu')
                 ]);     
 
                 $alert_toast = 
@@ -86,7 +86,7 @@ class JadwalBelajarController extends Controller
             try{         
                 $data = Http::withToken(Session::get('token'))->post($this->api_host.'/api/show', [
                     'id'        => $id,
-                    'params'    => 'jadwal-belajar_list'
+                    'params'    => 'jadwal_belajar_list'
                 ])->json();
 
                 $table = $data['data']; 
@@ -109,7 +109,7 @@ class JadwalBelajarController extends Controller
             try{   
                 $response = Http::withToken(Session::get('token'))->post($this->api_host.'/api/jadwal-belajar', [
                     'id'    =>  $id,
-                    'nama'  =>  $request->input('nama')
+                    'waktu'  =>  $request->input('waktu')
                 ]);     
                 
                 $alert_toast = 
@@ -137,7 +137,7 @@ class JadwalBelajarController extends Controller
             try{   
                 $data = Http::withToken(Session::get('token'))->post($this->api_host.'/api/delete', [
                     'id'        => $id,
-                    'params'    => 'jadwal-belajar_list'
+                    'params'    => 'jadwal_belajar_list'
                 ])->json();    
 
                 $alert_toast = 

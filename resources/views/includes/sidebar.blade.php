@@ -36,6 +36,9 @@
         </li>
         @endif
         @if(Session::get('role') == 'user')
+        <li>
+          <a href="{{route('edit-biodata', Session::get('id'))}}"><i class='bx bx-columns icon'></i> Update Biodata </a>
+        </li>
         <!-- Divider-->
         <li class="divider" data-text="Atrana">Registrasi</li>
         <li>

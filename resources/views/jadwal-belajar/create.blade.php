@@ -16,7 +16,7 @@
                 @csrf
                 <div class="card-body">
                   <div class="mb-3">
-                    <label>Title</label>
+                    <label>Waktu</label>
                     <input type="text" class="form-control" name="waktu" required="">
                   </div>
                 </div>

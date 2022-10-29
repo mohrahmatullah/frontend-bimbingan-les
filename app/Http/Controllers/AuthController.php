@@ -9,6 +9,7 @@ use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\View;
 use Session;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Crypt;
 
 class AuthController extends Controller
 {
@@ -121,9 +122,11 @@ class AuthController extends Controller
 
             if(isset($checkEmail['email'])){
 
+                $encrypt_id = Crypt::encrypt($checkEmail['id']);
+
                 $data = Http::post($this->api_host.'/api/send-link-forgot-password', [
                     'email'          => $request->input('email'),
-                    'url'          => route('redirect-forgot-password', $checkEmail['id'])
+                    'url'          => route('redirect-forgot-password', $encrypt_id)
                 ]);
 
                 $alert_toast = 
@@ -154,11 +157,11 @@ class AuthController extends Controller
 
     }
 
-    public function saveForgotPassword(Request $request,$id){
+    public function saveForgotPassword(Request $request, $id){
         try{           
-            
+            $decrypt_id = Crypt::decrypt($id); 
             $response = Http::post($this->api_host.'/api/save-forgot-password', [
-                'id'                => $id,
+                'id'                => $decrypt_id,
                 'password'          => $request->input('password'),
                 'confirm'           => $request->input('confirm')
             ]);    

@@ -41,7 +41,7 @@
                 <th scope="col">Agama</th>
                 <th scope="col">Alamat</th>
                 <th scope="col">Created</th>
-                <th scope="col">Action</th>
+                {{--<th scope="col">Action</th>--}}
               </tr>
             </thead>
             <tbody>
@@ -54,8 +54,8 @@
                 <td>{{ $row['alamat'] }}</td>
                 <td>{{ date('d M Y', strtotime($row['created_at'])) }}</td>
                 <td>
-                  {{--<a href="{{route('edit-biodata', $row['id_user'])}}" class="btn btn-primary btn-sm">Edit</button>--}}
-                  <a href="{{route('delete-biodata', $row['id'])}}" class="btn btn-warning btn-sm">Hapus</button>
+                  {{--<a href="{{route('edit-biodata', $row['id_user'])}}" class="btn btn-primary btn-sm">Edit</button>
+                  <a href="{{route('delete-biodata', $row['id'])}}" class="btn btn-warning btn-sm">Hapus</button>--}}
                 </td>
               </tr>
               @endforeach
